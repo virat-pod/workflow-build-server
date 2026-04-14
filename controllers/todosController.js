@@ -1,6 +1,6 @@
 import Todo from "../models/todo.js";
-import User from "../models/user.js";
 import { updateTodo } from "../service/todosService.js";
+
 export const addTodos = async (req, res) => {
   const body = req.body;
   try {
@@ -106,7 +106,14 @@ export const getRecentTasks = async (req, res) => {
 
     if (!result || result.length == 0)
       return res.status(404).json({ success: false, message: "Not found" });
-    return res.status(200).json({ success: true, message: "Found", result, todayDone: todayDoneTasks });
+    return res
+      .status(200)
+      .json({
+        success: true,
+        message: "Found",
+        result,
+        todayDone: todayDoneTasks,
+      });
   } catch (err) {
     return res.status(500).json({ success: false, message: "server error" });
   }

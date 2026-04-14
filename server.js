@@ -5,6 +5,7 @@ import express from "express";
 import { connectDB } from "./config/connectDB.js";
 import todo from "./router/todosRouter.js";
 import user from "./router/userRouter.js";
+import copilot from "./router/copilotRoute.js";
 
 const app = express();
 const port = 5000;
@@ -17,6 +18,8 @@ app.use(express.json());
 app.use("/todo", todo);
 
 app.use("/user", user);
+
+app.use("/ai", copilot);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

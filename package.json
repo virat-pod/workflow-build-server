@@ -12,10 +12,17 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "@copilotkit/runtime": "^1.10.6",
+    "axios": "^1.15.0",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
+    "groq-sdk": "^0.37.0",
     "mongoose": "^9.3.3",
     "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.6.0"
   }
 }
